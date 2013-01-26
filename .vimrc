@@ -1,3 +1,9 @@
+function! MdMe()
+    w
+    w ! mkmd %
+endfunction
+nmap <silent> ;m :call MdMe() 
+
 set nocp        "不兼容vi模式
 set fileencodings=utf8,gbk,big5 "文件编码
 set et  "扩展tab,将tab变成空格
@@ -7,7 +13,7 @@ set sts=4
 set smarttab    "删除时一次删4个空格
 set ai          "自动缩进
 
-set fdm=manual  "代码折叠方式手动
+"set fdm=manual  "代码折叠方式手动
 au BufWinLeave * silent mkview      "关闭文件时自动执行 :mkview 以保存代码折叠
 au BufWinEnter * silent loadview    "打开文件时自动执行 :loadview 以恢复代码折叠
 
